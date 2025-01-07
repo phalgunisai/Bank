@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Authentication and Classification</title>
+</head>
+<body>
+    <h1>Currency Note Verification</h1>
+    <form action="/" method="post" enctype="multipart/form-data">
+        <label for="image">Upload an Image:</label>
+        <input type="file" name="image" id="image" accept="image/*" required>
+        <button type="submit">Submit</button>
+    </form>
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
