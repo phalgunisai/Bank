@@ -12,10 +12,7 @@ from scipy.stats import kurtosis, skew, entropy
 import preprocessing as pp
 import tempfile
 import os
-import pygame  # Import pygame for playing audio
-
-# Initialize the pygame mixer
-pygame.mixer.init()
+from playsound import playsound  # Import playsound for audio playback
 
 # Load and preprocess the dataset for authenticity detection
 data = pd.read_csv('banknote_authentication.txt', header=None)
@@ -140,18 +137,16 @@ if image:
 
             st.success(f"Denomination: {predicted_class}")
 
-            # Path to the audio folder (update to match the correct folder structure in the repo)
-            audio_path = "audio"  # Adjust the path to point to the 'audio' folder in your repo
+            # Path to the audio folder
+            audio_path = r"C:\Users\Rajug\Desktop\combined\audio"
 
-            # Play corresponding sound in the background using pygame
+            # Play corresponding sound in the background using playsound
             if authenticity == "Real Currency":
                 audio_file = os.path.join(audio_path, f"{predicted_class}_real.mp3")
-                pygame.mixer.music.load(audio_file)
-                pygame.mixer.music.play()
+                playsound(audio_file)
             else:
                 audio_file = os.path.join(audio_path, f"{predicted_class}_fake.mp3")
-                pygame.mixer.music.load(audio_file)
-                pygame.mixer.music.play()
+                playsound(audio_file)
 
     except Exception as e:
         st.error(f"An error occurred during processing: {e}")
