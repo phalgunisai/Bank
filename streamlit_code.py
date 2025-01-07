@@ -12,7 +12,6 @@ from scipy.stats import kurtosis, skew, entropy
 import preprocessing as pp
 import tempfile
 import os
-from playsound import playsound  # Import playsound for audio playback
 
 # Load and preprocess the dataset for authenticity detection
 data = pd.read_csv('banknote_authentication.txt', header=None)
@@ -136,17 +135,6 @@ if image:
                 predicted_class = pp.class_names[predicted.item()]
 
             st.success(f"Denomination: {predicted_class}")
-
-            # Path to the audio folder
-            audio_path = r"C:\Users\Rajug\Desktop\combined\audio"
-
-            # Play corresponding sound in the background using playsound
-            if authenticity == "Real Currency":
-                audio_file = os.path.join(audio_path, f"{predicted_class}_real.mp3")
-                playsound(audio_file)
-            else:
-                audio_file = os.path.join(audio_path, f"{predicted_class}_fake.mp3")
-                playsound(audio_file)
 
     except Exception as e:
         st.error(f"An error occurred during processing: {e}")
