@@ -1,0 +1,27 @@
+name: currency_detection_app
+description: A Flutter application to detect currency authenticity.
+publish_to: 'none' # Make it private
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.19.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^0.13.6
+  image_picker: ^0.8.9+4
+  path_provider: ^2.0.10
+  # Add other dependencies if needed
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    # Add assets if any like images or models
