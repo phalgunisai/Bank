@@ -140,8 +140,8 @@ if image:
 
             st.success(f"Denomination: {predicted_class}")
 
-            # Path to the audio folder
-            audio_path = r"C:\Users\Rajug\Desktop\combined\audio"
+            # Path to the audio folder (update to match the correct folder structure in the repo)
+            audio_path = "audio"  # Adjust the path to point to the 'audio' folder in your repo
 
             # Play corresponding sound in the background using pygame
             if authenticity == "Real Currency":
